@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAF0WlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNy4yLWMwMDAgNzkuMWI2NWE3OWI0LCAyMDIyLzA2LzEzLTIyOjAxOjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjQuMCAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMjMtMDMtMjdUMTE6NDA6MjMtMDQ6MDAiIHhtcDpNZXRhZGF0YURhdGU9IjIwMjMtMDMtMjdUMTE6NDA6MjMtMDQ6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDIzLTAzLTI3VDExOjQwOjIzLTA0OjAwIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOmE3ZWI3ZmQzLTU1ZDAtNDI0ZC1hNTBmLWM5ZjEzOGU1NmQ0ZCIgeG1wTU06RG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOjM5N2UzZWJmLTlmN2ItYjU0Yi05ZTNhLTY2NGQ5MjZlNmI2ZCIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOmY0YjRhOTc5LTU5YzYtNDZlZS04ZWU4LTM2YzJiMjI1NzNiZiIgZGM6Zm9ybWF0PSJpbWFnZS9wbmciIHBob3Rvc2hvcDpDb2xvck1vZGU9IjMiPiA8eG1wTU06SGlzdG9yeT4gPHJkZjpTZXE+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJjcmVhdGVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOmY0YjRhOTc5LTU5YzYtNDZlZS04ZWU4LTM2YzJiMjI1NzNiZiIgc3RFdnQ6d2hlbj0iMjAyMy0wMy0yN1QxMTo0MDoyMy0wNDowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIDI0LjAgKE1hY2ludG9zaCkiLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249InNhdmVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOmE3ZWI3ZmQzLTU1ZDAtNDI0ZC1hNTBmLWM5ZjEzOGU1NmQ0ZCIgc3RFdnQ6d2hlbj0iMjAyMy0wMy0yN1QxMTo0MDoyMy0wNDowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIDI0LjAgKE1hY2ludG9zaCkiIHN0RXZ0OmNoYW5nZWQ9Ii8iLz4gPC9yZGY6U2VxPiA8L3htcE1NOkhpc3Rvcnk+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+YjqHzwAAAMNJREFUOI2Vk7ERwjAMRZ+cG4qUdGQDmIQlmIQNYBJGoKKlo6NzB0V0j0J2bFlOAr6TT7L0JX87qsrZmNkNGIGXqk5nx5tS82fgDhTAAzyBEfhYXlDVLAewBzTIHujO1LfkN2AAyh95AYZm/FKPxhwDz+SyJ6Ar2T0wn7KXxtwCL+AeXZqq6ojfnc+hHlV1zr5Q1VJzeyTgGv1qbTHwm/ZSNdfYpKp7E8NxF+2T4K0P/8+YdmArNrA1G9iaP7AB2+/8G78IXnYvgTKqFwAAAABJRU5ErkJggg==">
+    <title>Lithium Games</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        h1 {
+            background-color: #808080;
+            background-size: 300% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: rainbowWave 3s linear infinite;
+            display: inline-block;
+            font-size: 2.5rem;
+            margin-top: 60px;
+        }
+
+        img {
+            border-radius: 50%;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #0a0a0a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+        }
+
+        .date {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 10px;
+        }
+
+        #gameButtons {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .game-button {
+            padding: 12px 24px;
+            background-color: #1a1a1a;
+            color: white;
+            border: none;
+            font-size: 16px;
+            font-family: monospace;
+            cursor: default;
+        }
+
+		
+        @media (max-width: 768px) {
+            #gameButtons {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Lithium Games</h1>
+
+
+    <div class="container">
+        <div id="gameButtons"></div>
+    </div>
+
+    <script>
+        const games = [
+            ["Google", "https://google.com/?igu=1"],
+            ["Skibidi Toilet", "https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://147294106-271957305593713958.preview.editmysite.com/uploads/b/146211889-736862448591698921/files/stio.xml&container=ig"],
+            ["Tiny Fishing", "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://72682389-756457502729861133.preview.editmysite.com/uploads/b/11886820-896015480911618794/files/tf.xml&container=ig"],
+            ["The Final Earth 2", "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://529473016-184630684593625815.preview.editmysite.com/uploads/b/139890129-811652923688457694/files/tfe2.xml&container=ig"],
+            ["Slope", "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/WebStarterkit@ebc61d8a952e7630c8c5ca3410335bf5d5f04711/src/sp.xml&container=ig"],
+            ["World's Hardest Game", "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Fthe-world-s-hardest-game.xml&container=ig"],
+            ["Super Hot", "https://a6936-20249810.cluster7.canvas-user-content.com/courses/6936~1014013/files/6936~20249810/course%20files/superhot/index.html?download=1&inline=1"],
+            ["There Is No Game", "https://a6936-20098220.cluster7.canvas-user-content.com/courses/6936~1014013/files/6936~20098220/course%20files/there%20is%20no%20game/index.html?download=1&inline=1"],
+            ["Cookie Clicker", "https://a6936-19424025.cluster7.canvas-user-content.com/courses/6936~1014013/files/6936~19424025/course%20files/cookie%20clicker/index.html?download=1&inline=1"],
+            ["Time Shooter 2", "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/element@1dd0b99d2004b84795f2745a5eb3468deb1c38a4/ts2.xml&container=ig"],
+            ["Time Shooter 3", "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/version@0d8fb9c7430567ed0900902593eee6ba2ba8d297/ts3.xml&container=ig"],
+            ["Subway Surfers", "https://a6936-19375562.cluster7.canvas-user-content.com/courses/6936~1010708/files/6936~19375562/course%20files/vfcd/index.html"],
+            ["Retro Bowl", "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://274079163-174037128449362058.preview.editmysite.com/uploads/b/139890129-899796311729593176/files/rtbl.xml&container=ig"],
+            ["Fallerz.io", "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/gertdoro/learning-Python-3@4abaa4be3df458528ebc4487dcfe6b1c49d4ee7d/notebooks/fall.xml&container=ig"],
+            ["Tetris", "https://dionyziz.com/graphics/canvas-tetris/"],
+            ["Snow Rider 3D", "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/89574567@71f165531792ae450fe0a522a52ba4e827344de2/sr3d.xml&container=ig"],
+            ["Eggy Car", "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://googleusercontent.b-cdn.net/eggy-car/ec.xml&container=ig"],
+            ["Snowball.io", "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/gertdoro/SQLite4Unity3d@8516fc0bd1d2be662ca484f5dc506268b24763ef/Example/Assets/snowball.xml&container=ig"],
+            ["Moving Co.", "https://movingco.h5games.usercontent.goog/v/8fe98e0f-b1b7-4fc6-8023-200af0320f20/?origin=https%3A%2F%2Fgamesnacks.com&gameCenterId=yt&userActivityMetrics=true&eids=95340509&features=InterstitialFreqCap__freq_cap_60s%2CInterstitialFreqCap__block_pga_1m_interstitials%2CMonetization__populate_google_global_correlator%2CMonetization__use_ppabg_tag#pc=3401423534985718&preStart=1726706962732"],
+            ["Snowdown Showdown", "https://educate.stemfuse.com/sf-serve/76/snowdown_showdown/index.html?class_id=&course_id=&active="],
+            ["Johnny Trigger", "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/yrgen73/Jtrigger@3d4eb8d328bab8af057daa77acd4cee7608f1ec1/jt.xml&container=ig"],
+            ["Elastic Face", "https://d21u3ic0kp9e91.cloudfront.net/elasticman/0/index.html"],
+            ["n-gon", "https://d272xss3wq00xu.cloudfront.net/n-gon/index.html"],
+            ["Craft Mine", "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/bobydob/JSEngine@bdd7d45deaeaa50131e1913f2f0598cf147f8c56/build/crmine/crmi.xml&container=ig"],
+            ["Stack Bounce", "https://stackbounce.h5games.usercontent.goog/v/1aqsvv0aegbjg/?origin=https%3A%2F%2Fgamesnacks.com&gameCenterId=yt&userActivityMetrics=true&eids=95340509&features=InterstitialFreqCap__freq_cap_60s%2CInterstitialFreqCap__block_pga_1m_interstitials%2CMonetization__populate_google_global_correlator%2CMonetization__use_ppabg_tag#pc=4279443280740350&preStart=1726705971318&gameData=eyJsb2dsZXZlbCI6IkVSUk9SIiwiY2xldmVsQ3VycmVudCI6IjYiLCJjYmVzdFNjb3JlIjoiMTAxMTUiLCJjc3R5bGVJRCI6IjMiLCJjY2hvc2VuU2tpbklkIjoiMCIsImNwbGF0Zm9ybXNCcm9rZW5Ub3RhbCI6IjczMyIsImNsZXZlbC5yaW5nVHlwZUlEIjoiMyIsImNsZXZlbC5yaW5nc0NvdW50IjoiMjAwIiwiY2xldmVsLnJpbmdTY2FsaW5nIjoiMCJ9"],
+            ["Minecraft Parkour", "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/9ecda005-11e9-4b52-ab9e-700b4d46d00f%2Fminep.xml&container=ig"],
+            ["2048", "https://d272xss3wq00xu.cloudfront.net/2048/index.html"],
+            ["Only Up Ball", "https://d272xss3wq00xu.cloudfront.net/a/index.html"],
+            ["Pocket Battle Royale", "https://pocketbattleroyale.h5games.usercontent.goog/v/7a1tg7kmi4mfg/?origin=https%3A%2F%2Fgamesnacks.com&gameCenterId=yt&userActivityMetrics=true&eids=95340509&features=InterstitialFreqCap__freq_cap_60s%2CInterstitialFreqCap__block_pga_1m_interstitials%2CMonetization__populate_google_global_correlator%2CMonetization__use_ppabg_tag#pc=30652399916874&preStart=1726706652900"],
+            ["Adventure Drivers", "https://d272xss3wq00xu.cloudfront.net/adventure-drivers/index.html"],
+            ["Angry Birds", "https://d272xss3wq00xu.cloudfront.net/angrybirds/index.html"],
+            ["Aquapark Slides", "https://d272xss3wq00xu.cloudfront.net/aquapark-slides/index.html"],
+            ["Backrooms", "https://d272xss3wq00xu.cloudfront.net/backrooms/index.html"],
+            ["Bacon May Die", "https://d272xss3wq00xu.cloudfront.net/bacon-may-die/index.html"],
+            ["Ball Hop", "https://d272xss3wq00xu.cloudfront.net/Ball-Hop/index.html"],
+            ["Ballistic", "https://d272xss3wq00xu.cloudfront.net/ballistic/index.html"],
+            ["You Are Jeff Bezos", "https://d272xss3wq00xu.cloudfront.net/bezos/index.html"],
+            ["BitLife", "https://d272xss3wq00xu.cloudfront.net/bitlife/index.html"],
+            ["Bottle Flip", "https://d272xss3wq00xu.cloudfront.net/bottle-flip-3d/index.html"],
+            ["Bottle Flip 3D", "https://d272xss3wq00xu.cloudfront.net/bottle-flip/index.html"],
+            ["Candy Crush Saga", "https://d272xss3wq00xu.cloudfront.net/candycrushsaga.html"],
+            ["Cars Simulator", "https://d272xss3wq00xu.cloudfront.net/cars-simulator/index.html"],
+            ["Chrome Dino", "https://d272xss3wq00xu.cloudfront.net/chrome-dino/index.html"],
+            ["Clicker Heroes", "https://d272xss3wq00xu.cloudfront.net/clicker-heroes/index.html"],
+            ["Make Sure It's Closed", "https://d272xss3wq00xu.cloudfront.net/closed/index.html"],
+            ["Cluster Rush", "https://d272xss3wq00xu.cloudfront.net/cluster-rush/index.html"],
+            ["Cooking Frenzy", "https://d272xss3wq00xu.cloudfront.net/bitlife/index.html"],
+            ["Crazy Cars", "https://d272xss3wq00xu.cloudfront.net/crazy-cars/index.html"],
+            ["Crossy Road", "https://d272xss3wq00xu.cloudfront.net/crossyroad/index.html"],
+            ["CS:GO Clicker", "https://d272xss3wq00xu.cloudfront.net/csgoclicker/index.html"],
+            ["Cut The Rope", "https://d272xss3wq00xu.cloudfront.net/cuttherope-Timetravel/index.html"],
+            ["Epic Stunt Cars", "https://d272xss3wq00xu.cloudfront.net/d/index.html"],
+            ["Deal Or No Deal", "https://d272xss3wq00xu.cloudfront.net/deal-or-no-deal/index.html"],
+            ["Doodle Jump", "https://d272xss3wq00xu.cloudfront.net/doodle-jump/index.html"],
+            ["Draw The Hill", "https://d272xss3wq00xu.cloudfront.net/draw-the-hill/index.html"],
+            ["Drift Boss", "https://d272xss3wq00xu.cloudfront.net/drift-boss/index.html"],
+            ["Drive Mad", "https://d272xss3wq00xu.cloudfront.net/drivemad/index.html"],
+            ["Duck Life 4", "https://d272xss3wq00xu.cloudfront.net/ducklife4/index.html"],
+            ["Tap Tap Shots", "https://d272xss3wq00xu.cloudfront.net/e/index.html"],
+            ["Edge Surf", "https://d272xss3wq00xu.cloudfront.net/edge-surf/index.html"],
+            ["Eel Slap", "https://d272xss3wq00xu.cloudfront.net/eel-slap/index.html"],
+            ["Eggy Car", "https://d272xss3wq00xu.cloudfront.net/eggy-car/index.html"],
+            ["Fake Virus", "https://d272xss3wq00xu.cloudfront.net/fake-virus/index.html"],
+            ["Flappy Bird", "https://d272xss3wq00xu.cloudfront.net/FNAF4/index.html"],
+            ["FNAF 4", "https://d272xss3wq00xu.cloudfront.net/flappy-bird/index.html"],
+            ["Football Legends", "https://d272xss3wq00xu.cloudfront.net/football-legends/index.html"],
+            ["Football Strike", "https://d272xss3wq00xu.cloudfront.net/football-strike/index.html"],
+            ["Fruit Ninja", "https://d272xss3wq00xu.cloudfront.net/fruitninja/index.html"],
+            ["Geometry Dash", "https://d272xss3wq00xu.cloudfront.net/geometry-dash/index.html"],
+            ["Geometry Dash Lite", "https://d272xss3wq00xu.cloudfront.net/geometrydash/index.html"],
+            ["Getting Over It", "https://d272xss3wq00xu.cloudfront.net/getting-over-it/index.html"],
+            ["Glass City", "https://d272xss3wq00xu.cloudfront.net/glass-city/index.html"],
+            ["Google Feud", "https://d272xss3wq00xu.cloudfront.net/google-feud/index.html"],
+            ["Google Snake", "https://d272xss3wq00xu.cloudfront.net/googlesnake.html"],
+            ["G-Switch 3", "https://d272xss3wq00xu.cloudfront.net/gswitch-3/index.html"],
+            ["Hop Pop It", "https://d272xss3wq00xu.cloudfront.net/hop-pop-it/index.html"],
+            ["Idle Restaurants", "https://d272xss3wq00xu.cloudfront.net/idle-restaurants/index.html"],
+            ["The Impossible Quiz", "https://d272xss3wq00xu.cloudfront.net/impossiblequiz/index.html"],
+            ["Jetpack Joyride", "https://d272xss3wq00xu.cloudfront.net/jetpack-joyride/index.html"],
+            ["Lemonade Stand", "https://d272xss3wq00xu.cloudfront.net/lemonadestand.html"],
+            ["New Super Mario Bros", "https://d272xss3wq00xu.cloudfront.net/mario-bros/index.html"],
+            ["Super Mario Bros", "https://d272xss3wq00xu.cloudfront.net/mario/index.html"],
+            ["Masked Special Forces", "https://d272xss3wq00xu.cloudfront.net/maskedspecialforces/index.html"],
+            ["Minecraft Case", "https://d272xss3wq00xu.cloudfront.net/minecraft-case/index.html"],
+            ["Minesweeper", "https://d272xss3wq00xu.cloudfront.net/minesweeper/index.html"],
+            ["Moto X3M", "https://d272xss3wq00xu.cloudfront.net/Moto-X3M/index.html"],
+            ["Mr. Bullet", "https://d272xss3wq00xu.cloudfront.net/mr-bullet/index.html"],
+            ["Nut Simulator", "https://d272xss3wq00xu.cloudfront.net/nut-simulator/index.html"],
+            ["osu!", "https://d272xss3wq00xu.cloudfront.net/osu.html"],
+            ["OvO 2", "https://d272xss3wq00xu.cloudfront.net/ovo-2/index.html"],
+            ["Pacman", "https://d272xss3wq00xu.cloudfront.net/pacman/index.html"],
+            ["Papa's Scooperia", "https://d272xss3wq00xu.cloudfront.net/papasscooperia/index.html"],
+            ["Paper Minecraft", "https://d272xss3wq00xu.cloudfront.net/paper-minecraft/index.html"],
+            ["Paper.io 3", "https://d272xss3wq00xu.cloudfront.net/paperio3.html"],
+            ["Papery Planes", "https://d272xss3wq00xu.cloudfront.net/papery-planes/index.html"],
+            ["Plants vs Zombies", "https://d272xss3wq00xu.cloudfront.net/plantsvszombies/plants%20vs%20zombies.html"],
+            ["Popcat", "https://d272xss3wq00xu.cloudfront.net/popcat/index.html"],
+            ["Rise Higher", "https://d272xss3wq00xu.cloudfront.net/risehigher/index.html"],
+            ["Rocket League", "https://d272xss3wq00xu.cloudfront.net/Rocket-League/index.html"],
+            ["Scrap Metal 3", "https://d272xss3wq00xu.cloudfront.net/scrapmetal/index.html"],
+            ["Skibidi Strike", "https://d272xss3wq00xu.cloudfront.net/skibidi-strike/index.html"],
+            ["Slope 2", "https://d272xss3wq00xu.cloudfront.net/slope-2/index.html"],
+            ["Super Mario 64", "https://d272xss3wq00xu.cloudfront.net/sm64/index.html"],
+            ["Smash Karts", "https://d272xss3wq00xu.cloudfront.net/smashkarts/index.html"],
+            ["Sniper Shot", "https://d272xss3wq00xu.cloudfront.net/sniper-shot/index.html"],
+            ["Soccer Heads", "https://d272xss3wq00xu.cloudfront.net/soccer-heads/index.html"],
+            ["Soundboard", "https://d272xss3wq00xu.cloudfront.net/soundboard/index.html"],
+            ["Space Company", "https://d272xss3wq00xu.cloudfront.net/space-company/index.html"],
+            ["Stack Bump 3D", "https://d272xss3wq00xu.cloudfront.net/stack-bump-3d/index.html"],
+            ["Stack", "https://d272xss3wq00xu.cloudfront.net/stack/index.html"],
+            ["Stack Ball", "https://d272xss3wq00xu.cloudfront.net/stackball/index.html"],
+            ["Stickman Hook", "https://d272xss3wq00xu.cloudfront.net/stickman-hook/index.html"],
+            ["Stickman Survival", "https://d272xss3wq00xu.cloudfront.net/Stickman-Survival/index.html"],
+            ["Super Mario Run", "https://d272xss3wq00xu.cloudfront.net/supermariorun.html"],
+            ["Tactical Assasin 2", "https://d272xss3wq00xu.cloudfront.net/tacticalassasin2/index.html"],
+            ["Temple Run 2", "https://d272xss3wq00xu.cloudfront.net/temple-run-2/index.html"],
+            ["Territorial", "https://d272xss3wq00xu.cloudfront.net/territorial.html"],
+            ["Tunnel Rush", "https://d272xss3wq00xu.cloudfront.net/tunnel-rush/index.html"],
+            ["Vex 7", "https://d272xss3wq00xu.cloudfront.net/vex7/index.html"],
+            ["Wordle", "https://d272xss3wq00xu.cloudfront.net/wordle/index.html"],
+            ["Yohoho", "https://d272xss3wq00xu.cloudfront.net/yohoho/index.html"],
+            ["Gun Spin", "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/RobiFet/workflow@60b41ef8c9123ae41b86bf04c9b39e1a5713aaa9/bin/gs.xml&container=ig"],
+            ["Rooftop Snipers", "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/version@f8de953e5d955baef80e3994a1105d74ad76315b/Rooftop-Snipers.xml&container=ig"],
+            ["Basket Random", "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/classroom-google-new/google.net@main/newgoogletrendd.xml&container=ig"],
+            ["Hole.io", "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/gertdoro/Toolkit@93a27eabbbe5eb626af5b9b7dd0926ac16810a41/Code/Java/hole.xml&container=ig"],
+            ["Snake", "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://26515722-282596139816136697.preview.editmysite.com/uploads/b/7547235-562404422326578714/files/sis.xml&container=ig"],
+            ["Vex 5", "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/bobydob/JSEngine@dae52f4583f3cc7612451ea7f02965aeff6077bf/build/v5/v5.xml&container=ig"],
+            ["Cookie Clicker", "https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/bobydob/JSEngine@0d9afabd2522344a702e1b692ad58039f6290b0d/build/c-c/cc.xml&container=ig"],
+            ["Tomb Of The Mask", "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/element@9cccb2fafb569c963501a5d818472b561121cea6/totm.xml&container=ig"],
+            ["Work Madness", "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://groups.google.com/group/54r7m5resdndren65dx/attach/27a7a2ce95d5c/google.xml?part=0.1&view=1&container=ig"],
+            ["Monster Truck Race", "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://groups.google.com/group/54r7m5resdndren65dx/attach/27f7898b1dc1b/yyyy.xml?part=0.1&view=1&container=ig"],
+            ["Geometry Dash 3D", "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://groups.google.com/group/54r7m5resdndren65dx/attach/54029c83177b1/geyee.xml?part=0.1&view=1&container=ig"],
+            ["Cyber Cars", "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://groups.google.com/group/54r7m5resdndren65dx/attach/b14b0568a59ba/yu7tc.xml?part=0.1&view=1&container=ig"],
+            ["Aquapark Cars", "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://groups.google.com/group/54r7m5resdndren65dx/attach/ad1b0f5720964/bbbgf.xml?part=0.1&view=1&container=ig"],
+            ["Aim Trainer", "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://groups.google.com/group/54r7m5resdndren65dx/attach/27a856ab4f4d3/google.xml?part=0.1&view=1&container=ig"],
+            ["Zombie Exploder", "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://groups.google.com/group/54r7m5resdndren65dx/attach/27a8f79c6acbe/google.xml?part=0.1&view=1&container=ig"],
+            ["Mortal Kombat", "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://groups.google.com/group/54r7m5resdndren65dx/attach/27aa8c8fdd5ac/google.xml?part=0.1&view=1&container=ig"],
+            ["Electric Man", "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://groups.google.com/group/54r7m5resdndren65dx/attach/27ab7e09f8875/google.xml?part=0.1&view=1&container=ig"],
+            ["Bounzy 2", "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://groups.google.com/group/54r7m5resdndren65dx/attach/27ad4a72a840f/google.xml?part=0.1&view=1&container=ig"],
+            ["Ambulance Rush", "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://groups.google.com/group/54r7m5resdndren65dx/attach/27acba29ab944/google.xml?part=0.1&view=1&container=ig"],
+            ["Russians Drive", "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://groups.google.com/group/54r7m5resdndren65dx/attach/ac5505094336e/z64.xml?part=0.1&view=1&container=ig"],
+            ["OvO", "https://s6jf3nx0gk1d6n-opensocial.googleusercontent.com/gadgets/ifr?url=https://427396048-642845047394716217.preview.editmysite.com/uploads/b/139890129-761103484729797659/files/ovof.xml&container=ig"],
+            ["OvO 2", "https://s6jf3nx0gk1d6n-opensocial.googleusercontent.com/gadgets/ifr?url=https://googleusercontent.b-cdn.net/ovo2/ovo2.xml&container=ig"],
+            ["Proxy Links", "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://groups.google.com/u/6/group/google-forms-work/attach/6e87fda052412/googlecom.xml?part=0.1&view=1&authuser=6&container=ig"],
+            ["Do Not Stop", "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/classroom-management/teacher@main/dotgoogle.xml&container=ig"],
+            ["BitLife", "https://d272xss3wq00xu.cloudfront.net/bitlife/index.html"],
+            ["Helix Jump", "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://groups.google.com/u/6/group/54r7m5resdndren65dx/attach/a634c8ae323d5/h4643.xml?part=0.1&view=1&authuser=6&container=ig"],
+            ["Pixel Shooter", "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://groups.google.com/group/classroomgoogl-net/attach/99c0874f1098d/zy55555.xml?part=0.1&view=1&container=ig"],
+            ["Highway Rider Extreme", "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/234sd4w5w45wers5tr-645758574456456/9900@main/5234234.xml?part=0.1&view=1&container=ig"],
+            ["Paper IO 2", "https://d272xss3wq00xu.cloudfront.net/paperio2/index.html"],
+            ["Paper IO 3", "https://d272xss3wq00xu.cloudfront.net/paperio3.html"],
+            ["Acid Rain", "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Facid-rain.xml&container=ig"],
+            ["UNO!", "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/gertdoro/UnityPy@388b260053eaa47c3ac01b18c66d5508c6cfe231/tests/samples/uno.xml&container=ig"],
+            ["Elastic Face", "https://s6jf3nx0gk1d6n-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/bobydob/godotpack@e2eaacc90db7a760867d838a1224e490a92da39b/side/eman/face.xml&container=ig "],
+            ["Hill Climbing", "https://s6jf3nx0gk1d6n-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/bessiegasbarro/HCR@402cc488704523b469aa22506bf4c6c2207097c4/hcr.xml&container=ig"],
+            ["3D Block Builder", "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/classroom-management/tyt@main/google.net.xml?part=0.1&view=1&container=ig"],
+            ["Basketball Shooter", "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/yrgen73/BSD2@b5104af0b3a445248e829ff728017e5cc40d72e8/bsd2.xml?part=0.1&view=1&container=ig"],
+            ["Bouncy Rush", "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/gertdoro/UnityExplorer@f5d8c1af690a04f18c72ae56dad76e216b6ecbf2/CacheObject/Bouncy.xml&container=ig"],
+            ["Agar IO lite", "https://d272xss3wq00xu.cloudfront.net/agario.html"],
+            ["Mario Party 4", "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/f107b843-3661-4036-9397-2b0c6414a369%2Fmarioparty4.xml&container=ig"],
+            ["Dead Zed", "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Fdead_zed.xml&container=ig"],
+            ["Galaga", "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Fgalaga.xml&container=ig"],
+            ["Riddle School 1", "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Friddle-school.xml&container=ig"],
+			["Obby Robby", "https://qrvqrzbrdnhtbikofnemykr8-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/9ecda005-11e9-4b52-ab9e-700b4d46d00f%2Fobby.xml&container=ig"],
+			["Soccer Random", "https://azqjxdsdtqfbdwfvzlny3kgl-opensocial.googleusercontent.com/gadgets/ifr?url=https://471058263-725410472258601738.preview.editmysite.com/uploads/b/139890129-510930859892590631/files/sr.xml&container=ig"],
+			["Save My Pet", "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/nurimoores/DataSources@9f54c673948151d03a62f5e63c67efaf558759ab/smp.xml&container=ig"],
+			["Noob Miner", "https://my79w0vvvo1to8nev0pnvq08-opensocial.googleusercontent.com/gadgets/ifr?url=https://428048613-274630817493625816.preview.editmysite.com/uploads/b/139890129-289556751581345554/files/nm.xml&container=ig"],
+			["Soccer Skills", "https://aa6hthgbtn19gwwl28pelv1q-opensocial.googleusercontent.com/gadgets/ifr?url=https://471904738-852049328537117493.preview.editmysite.com/uploads/b/139890129-154348492386095606/files/ssee.xml&container=ig"],
+			["Death Run 3D", "https://sv2emrfgjawywpy44osygatn-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/version@93f7f60b0f054c956ca9b6622f2daeeeb450632c/death_run.xml&container=ig"],
+			["Noob vs Pro", "https://bdjfc7hca56th6oqeynmkizy-opensocial.googleusercontent.com/gadgets/ifr?url=https://374610594-153905749316385925.preview.editmysite.com/uploads/b/139890129-538277031118477931/files/nvp.xml&container=ig"],	
+            ["Minecraft 1.5", "https://d272xss3wq00xu.cloudfront.net/minecraft-15/index.html"],
+            ["Minecraft 1.8", "https://d272xss3wq00xu.cloudfront.net/minecraft-18/index.html"],
+			["Minecraft 1.9", "/1-9.html"],
+			["Minecraft 1.11", "/1-11.html"],
+			["Minecraft 1.20.4", "/1-20.html"],
+			["Chess", "https://existence.b-cdn.net/chess.html"],
+        ];
+
+        const gameButtons = document.getElementById('gameButtons');
+
+        games.forEach(game => {
+            const button = document.createElement('button');
+            button.className = 'game-button';
+            button.textContent = game[0];
+
+            button.onclick = () => {
+                const newWindow = window.open('about:blank', '_blank');
+                newWindow.document.write(`
+                    <!DOCTYPE html>
+                    <html>
+                        <head>
+                            <title>${game[0]}</title>
+                            <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAF0WlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNy4yLWMwMDAgNzkuMWI2NWE3OWI0LCAyMDIyLzA2LzEzLTIyOjAxOjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjQuMCAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMjMtMDMtMjdUMTE6NDA6MjMtMDQ6MDAiIHhtcDpNZXRhZGF0YURhdGU9IjIwMjMtMDMtMjdUMTE6NDA6MjMtMDQ6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDIzLTAzLTI3VDExOjQwOjIzLTA0OjAwIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOmE3ZWI3ZmQzLTU1ZDAtNDI0ZC1hNTBmLWM5ZjEzOGU1NmQ0ZCIgeG1wTU06RG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOjM5N2UzZWJmLTlmN2ItYjU0Yi05ZTNhLTY2NGQ5MjZlNmI2ZCIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOmY0YjRhOTc5LTU5YzYtNDZlZS04ZWU4LTM2YzJiMjI1NzNiZiIgZGM6Zm9ybWF0PSJpbWFnZS9wbmciIHBob3Rvc2hvcDpDb2xvck1vZGU9IjMiPiA8eG1wTU06SGlzdG9yeT4gPHJkZjpTZXE+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJjcmVhdGVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOmY0YjRhOTc5LTU5YzYtNDZlZS04ZWU4LTM2YzJiMjI1NzNiZiIgc3RFdnQ6d2hlbj0iMjAyMy0wMy0yN1QxMTo0MDoyMy0wNDowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIDI0LjAgKE1hY2ludG9zaCkiLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249InNhdmVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOmE3ZWI3ZmQzLTU1ZDAtNDI0ZC1hNTBmLWM5ZjEzOGU1NmQ0ZCIgc3RFdnQ6d2hlbj0iMjAyMy0wMy0yN1QxMTo0MDoyMy0wNDowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIDI0LjAgKE1hY2ludG9zaCkiIHN0RXZ0OmNoYW5nZWQ9Ii8iLz4gPC9yZGY6U2VxPiA8L3htcE1NOkhpc3Rvcnk+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+YjqHzwAAAMNJREFUOI2Vk7ERwjAMRZ+cG4qUdGQDmIQlmIQNYBJGoKKlo6NzB0V0j0J2bFlOAr6TT7L0JX87qsrZmNkNGIGXqk5nx5tS82fgDhTAAzyBEfhYXlDVLAewBzTIHujO1LfkN2AAyh95AYZm/FKPxhwDz+SyJ6Ar2T0wn7KXxtwCL+AeXZqq6ojfnc+hHlV1zr5Q1VJzeyTgGv1qbTHwm/ZSNdfYpKp7E8NxF+2T4K0P/8+YdmArNrA1G9iaP7AB2+/8G78IXnYvgTKqFwAAAABJRU5ErkJggg==" type="image/x-icon">
+                            <style>
+                                body { 
+                                    margin: 0; 
+                                    padding: 0;
+                                    overflow: hidden;
+                                }
+                                iframe { 
+                                    border: 0;
+                                    width: 100%;
+                                    height: 100vh;
+                                    display: block;
+                                }
+                            </style>
+                        </head>
+                        <body>
+                            <iframe src="${game[1]}" frameborder="0"></iframe>
+                        </body>
+                    </html>
+                `);
+            };
+
+            gameButtons.appendChild(button);
+        });
+    </script>
+</body>
+</html>
